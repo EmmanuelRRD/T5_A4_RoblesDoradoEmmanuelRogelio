@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textAlignment="center"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="245dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="112dp"
+        android:text="CONVERSOR"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="439dp"
+        android:layout_height="333dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/box_num">
+
+        <CheckBox
+            android:id="@+id/check_binari"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="300dp"
+            android:onClick="operations"
+            android:text="Binari"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/check_hexa"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="76dp"
+            android:layout_marginEnd="300dp"
+            android:onClick="operations"
+            android:text="Hexadecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/check_octal" />
+
+        <EditText
+            android:id="@+id/box_numHexadecimal"
+            android:layout_width="230dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="68dp"
+            android:layout_marginEnd="28dp"
+            android:ems="10"
+            android:hint="Hexadecimal"
+            android:inputType="numberDecimal"
+            android:textAlignment="viewStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/box_numOctal" />
+
+        <EditText
+            android:id="@+id/box_numOctal"
+            android:layout_width="230dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="72dp"
+            android:layout_marginEnd="28dp"
+            android:ems="10"
+            android:hint="Octal"
+            android:inputType="numberDecimal"
+            android:textAlignment="viewStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/box_numBinari" />
+
+        <CheckBox
+            android:id="@+id/check_octal"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="72dp"
+            android:layout_marginEnd="300dp"
+            android:onClick="operations"
+            android:text="Octal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/check_binari" />
+
+        <EditText
+            android:id="@+id/box_numBinari"
+            android:layout_width="230dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="28dp"
+            android:ems="10"
+            android:hint="Binario"
+            android:inputType="numberDecimal"
+            android:textAlignment="viewStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <EditText
+        android:id="@+id/box_num"
+        android:layout_width="428dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="73dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:hint="Ingresa un número"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="387dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="40dp"
+        android:orientation="horizontal"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <RadioButton
+            android:id="@+id/btn_decimal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Decimal"
+            android:onClick="operations" />
+
+        <RadioButton
+            android:id="@+id/btn_binario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="operations"
+            android:text="Binario" />
+
+        <RadioButton
+            android:id="@+id/btn_octal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="operations"
+            android:text="Octal" />
+
+        <RadioButton
+            android:id="@+id/btn_hexadecimal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="operations"
+            android:text="Hexadecimal" />
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
